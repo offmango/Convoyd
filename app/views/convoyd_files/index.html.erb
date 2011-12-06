@@ -1,0 +1,33 @@
+<h1>Listing convoyd_files</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Upload file size</th>
+    <th>Upload content type</th>
+    <th>Upload file name</th>
+    <th>Upload updated at</th>
+    <th>Upload</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @convoyd_files.each do |convoyd_file| %>
+  <tr>
+    <td><%= convoyd_file.user_id %></td>
+    <td><%= convoyd_file.upload_file_size %></td>
+    <td><%= convoyd_file.upload_content_type %></td>
+    <td><%= convoyd_file.upload_file_name %></td>
+    <td><%= convoyd_file.upload_updated_at %></td>
+    <td><%= convoyd_file.upload %></td>
+    <td><%= link_to 'Show', convoyd_file %></td>
+    <td><%= link_to 'Edit', edit_convoyd_file_path(convoyd_file) %></td>
+    <td><%= link_to 'Destroy', convoyd_file, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Convoyd file', new_convoyd_file_path %>

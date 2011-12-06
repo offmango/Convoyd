@@ -1,0 +1,22 @@
+<%= form_for([@user, @convoyd_file], :html => {:multipart => true}) do |f| %>
+  <% if @convoyd_file.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@convoyd_file.errors.count, "error") %> prohibited this file from being uploaded:</h2>
+
+      <ul>
+      <% @convoyd_file.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :user_id, :value => @user.id %>
+	<p>Please select your file to be uploaded, then click "Upload!"</p>
+  <div class="field">
+    <%= f.file_field :upload %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Upload!" %>
+  </div>
+<% end %>
