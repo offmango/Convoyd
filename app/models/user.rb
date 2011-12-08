@@ -10,5 +10,9 @@ class User < ActiveRecord::Base
   
   has_many :convoyd_files, :dependent => :destroy
   
+  # Define user roles
+  ROLES = %w[limited_user full_user moderator admin]
+  STATUSES = %w[unapproved disabled active]
+  
     
 end

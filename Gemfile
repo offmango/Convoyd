@@ -31,6 +31,7 @@ gem 'paperclip'
 gem 'sorcery'
 gem 'heroku'
 gem 'cancan'
+gem 'aws-s3'
 
 group :production do
   # gems specifically for Heroku go here

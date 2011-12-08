@@ -2600,3 +2600,1292 @@ Served asset /users.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-05 16:18:18 -0500
 Served asset /application.js - 304 Not Modified (0ms)
+  [1m[36m (14.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to SorceryCore (20111205173049)
+Migrating to CreateConvoydFiles (20111205181719)
+Migrating to AddPasswordToConvoydFiles (20111206170004)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (424.3ms)[0m  [1mALTER TABLE "convoyd_files" ADD "crypted_password" varchar(255)[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "convoyd_files" ADD "convoyd_key" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "convoyd_files" ADD "status" varchar(255)[0m
+  [1m[35m (130.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111206170004')
+Migrating to AddStatusToUsers (20111206170638)
+  [1m[36m (541.7ms)[0m  [1mALTER TABLE "users" ADD "status" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "role" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD "quota" float[0m
+  [1m[35m (266.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111206170638')
+  [1m[36m (0.4ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("convoyd_files")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("users")
+
+
+Started GET "/users" for 127.0.0.1 at 2011-12-06 12:43:26 -0500
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (10.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+Rendered users/index.html.erb within layouts/application (82.9ms)
+Completed 200 OK in 962ms (Views: 890.6ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-06 12:43:28 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.css?body=1" for 127.0.0.1 at 2011-12-06 12:43:29 -0500
+Served asset /convoyd_files.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-06 12:43:29 -0500
+Served asset /users.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-06 12:43:29 -0500
+Served asset /sessions.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-06 12:43:29 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-06 12:43:29 -0500
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-06 12:43:29 -0500
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/convoyd_files.js?body=1" for 127.0.0.1 at 2011-12-06 12:43:29 -0500
+Served asset /convoyd_files.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-06 12:43:29 -0500
+Served asset /sessions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-06 12:43:29 -0500
+Served asset /users.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-06 12:43:29 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2011-12-06 12:43:34 -0500
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+Rendered users/_form.html.erb (68.4ms)
+Rendered users/edit.html.erb within layouts/application (134.3ms)
+Completed 200 OK in 161ms (Views: 157.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-06 12:43:36 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-06 12:43:36 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-06 12:43:36 -0500
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-06 12:43:36 -0500
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.css?body=1" for 127.0.0.1 at 2011-12-06 12:43:36 -0500
+Served asset /convoyd_files.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-06 12:43:36 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-06 12:43:36 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.js?body=1" for 127.0.0.1 at 2011-12-06 12:43:36 -0500
+Served asset /convoyd_files.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-06 12:43:36 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-06 12:43:36 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-06 12:43:36 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started PUT "/users/1" for 127.0.0.1 at 2011-12-06 12:43:46 -0500
+  Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MShSDYjbbsntCIEwPEpwOIweTAJsB/NDs6tbYsS0vHo=", "user"=>{"first_name"=>"Eric", "last_name"=>"Kurzenberger", "email"=>"offmango@me.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"admin", "status"=>"active"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+WARNING: Can't mass-assign protected attributes: role, status
+  [1m[36m (0.3ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."email" = 'offmango@me.com' AND "users"."id" != 1) LIMIT 1[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 244ms
+
+
+Started GET "/users" for 127.0.0.1 at 2011-12-06 12:43:47 -0500
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+Rendered users/index.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-06 12:43:48 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.css?body=1" for 127.0.0.1 at 2011-12-06 12:43:48 -0500
+Served asset /convoyd_files.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-06 12:43:48 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-06 12:43:48 -0500
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-06 12:43:48 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-06 12:43:48 -0500
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-06 12:43:48 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.js?body=1" for 127.0.0.1 at 2011-12-06 12:43:48 -0500
+Served asset /convoyd_files.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-06 12:43:48 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-06 12:43:48 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-06 12:43:48 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/2/edit" for 127.0.0.1 at 2011-12-06 12:43:53 -0500
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "2"]]
+Rendered users/_form.html.erb (17.5ms)
+Rendered users/edit.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 33ms (Views: 29.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-06 12:43:54 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.css?body=1" for 127.0.0.1 at 2011-12-06 12:43:54 -0500
+Served asset /convoyd_files.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-06 12:43:54 -0500
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-06 12:43:54 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-06 12:43:54 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-06 12:43:54 -0500
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-06 12:43:54 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.js?body=1" for 127.0.0.1 at 2011-12-06 12:43:54 -0500
+Served asset /convoyd_files.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-06 12:43:54 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-06 12:43:54 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-06 12:43:54 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started PUT "/users/2" for 127.0.0.1 at 2011-12-06 12:44:02 -0500
+  Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MShSDYjbbsntCIEwPEpwOIweTAJsB/NDs6tbYsS0vHo=", "user"=>{"first_name"=>"William", "last_name"=>"Kurzenberger", "email"=>"wjkurzen@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"full_user", "status"=>"active"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "2"]]
+WARNING: Can't mass-assign protected attributes: role, status
+  [1m[35m (0.2ms)[0m  SELECT 1 FROM "users" WHERE ("users"."email" = 'wjkurzen@gmail.com' AND "users"."id" != 2) LIMIT 1
+Redirected to http://localhost:3000/users
+Completed 302 Found in 15ms
+
+
+Started GET "/users" for 127.0.0.1 at 2011-12-06 12:44:02 -0500
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" 
+Rendered users/index.html.erb within layouts/application (61.0ms)
+Completed 200 OK in 74ms (Views: 71.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-06 12:44:03 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-06 12:44:03 -0500
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-06 12:44:03 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-06 12:44:03 -0500
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.css?body=1" for 127.0.0.1 at 2011-12-06 12:44:03 -0500
+Served asset /convoyd_files.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-06 12:44:03 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-06 12:44:03 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.js?body=1" for 127.0.0.1 at 2011-12-06 12:44:03 -0500
+Served asset /convoyd_files.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-06 12:44:03 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-06 12:44:03 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-06 12:44:03 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2011-12-06 12:45:38 -0500
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+Rendered users/_form.html.erb (16.4ms)
+Rendered users/edit.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 48ms (Views: 45.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-06 12:45:38 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.css?body=1" for 127.0.0.1 at 2011-12-06 12:45:38 -0500
+Served asset /convoyd_files.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-06 12:45:38 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-06 12:45:38 -0500
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-06 12:45:38 -0500
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-06 12:45:39 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-06 12:45:39 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-06 12:45:39 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-06 12:45:39 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.js?body=1" for 127.0.0.1 at 2011-12-06 12:45:39 -0500
+Served asset /convoyd_files.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-06 12:45:39 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started PUT "/users/1" for 127.0.0.1 at 2011-12-06 12:45:51 -0500
+  Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MShSDYjbbsntCIEwPEpwOIweTAJsB/NDs6tbYsS0vHo=", "user"=>{"first_name"=>"Eric", "last_name"=>"Kurzenberger", "email"=>"offmango@me.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "quota"=>"10000", "role"=>"limited_user", "status"=>"unapproved"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+WARNING: Can't mass-assign protected attributes: quota, role, status
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."email" = 'offmango@me.com' AND "users"."id" != 1) LIMIT 1[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 18ms
+
+
+Started GET "/users" for 127.0.0.1 at 2011-12-06 12:45:51 -0500
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+Rendered users/index.html.erb within layouts/application (59.8ms)
+Completed 200 OK in 75ms (Views: 71.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-06 12:45:52 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.css?body=1" for 127.0.0.1 at 2011-12-06 12:45:52 -0500
+Served asset /convoyd_files.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-06 12:45:52 -0500
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-06 12:45:52 -0500
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-06 12:45:52 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-06 12:45:52 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-06 12:45:52 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.js?body=1" for 127.0.0.1 at 2011-12-06 12:45:52 -0500
+Served asset /convoyd_files.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-06 12:45:52 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-06 12:45:52 -0500
+Served asset /users.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-06 12:45:52 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2011-12-06 12:45:53 -0500
+  Processing by SessionsController#destroy as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Redirected to http://localhost:3000/login
+Completed 302 Found in 18ms
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-06 12:45:53 -0500
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 53ms (Views: 52.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-06 12:45:54 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-06 12:45:54 -0500
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.css?body=1" for 127.0.0.1 at 2011-12-06 12:45:54 -0500
+Served asset /convoyd_files.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-06 12:45:54 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-06 12:45:54 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-06 12:45:54 -0500
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-06 12:45:54 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.js?body=1" for 127.0.0.1 at 2011-12-06 12:45:54 -0500
+Served asset /convoyd_files.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-06 12:45:54 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-06 12:45:54 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-06 12:45:54 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-12-06 12:45:57 -0500
+  Processing by UsersController#index as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-06 12:45:57 -0500
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 11ms (Views: 10.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-06 12:45:58 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.css?body=1" for 127.0.0.1 at 2011-12-06 12:45:58 -0500
+Served asset /convoyd_files.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-06 12:45:58 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-06 12:45:58 -0500
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-06 12:45:58 -0500
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-06 12:45:58 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.js?body=1" for 127.0.0.1 at 2011-12-06 12:45:58 -0500
+Served asset /convoyd_files.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-06 12:45:58 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-06 12:45:58 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-06 12:45:58 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-06 12:45:58 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-12-06 12:46:08 -0500
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"We3YjC+JRpsafw1nWS+Om4G1dm95aNw7MHds3I9KPVk=", "email"=>"offmango@me.com", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE (email = 'offmango@me.com') LIMIT 1[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 211ms
+
+
+Started GET "/users" for 127.0.0.1 at 2011-12-06 12:46:09 -0500
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+Rendered users/index.html.erb within layouts/application (57.8ms)
+Completed 200 OK in 70ms (Views: 67.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-06 12:46:10 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.css?body=1" for 127.0.0.1 at 2011-12-06 12:46:10 -0500
+Served asset /convoyd_files.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-06 12:46:10 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-06 12:46:10 -0500
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-06 12:46:10 -0500
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:10 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:10 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:10 -0500
+Served asset /convoyd_files.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:10 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:10 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:10 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2011-12-06 12:46:12 -0500
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Rendered users/_form.html.erb (17.0ms)
+Rendered users/edit.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 32ms (Views: 29.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-06 12:46:13 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.css?body=1" for 127.0.0.1 at 2011-12-06 12:46:13 -0500
+Served asset /convoyd_files.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-06 12:46:13 -0500
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-06 12:46:13 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-06 12:46:13 -0500
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:13 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:13 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:13 -0500
+Served asset /convoyd_files.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:13 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:13 -0500
+Served asset /users.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:13 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started PUT "/users/1" for 127.0.0.1 at 2011-12-06 12:46:32 -0500
+  Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QWZORmphaa/ywq4Xr/h7F7dzhbsZQFX0YvX9ov/i8XE=", "user"=>{"first_name"=>"Eric", "last_name"=>"Kurzenberger", "email"=>"offmango@me.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "quota"=>"10000", "role"=>"limited_user", "status"=>"unapproved"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+WARNING: Can't mass-assign protected attributes: quota, role, status
+  [1m[35m (0.2ms)[0m  SELECT 1 FROM "users" WHERE ("users"."email" = 'offmango@me.com' AND "users"."id" != 1) LIMIT 1
+  [1m[36m (12.7ms)[0m  [1mUPDATE "users" SET "salt" = '1mMoXcPbqzoUjW3D2H1n', "crypted_password" = '$2a$10$DZ1bq.5VGrEGbHZvoWB7tejzabc5IzL6YiFYHHhkWkD0v7MmBC5ie', "updated_at" = '2011-12-06 17:46:32.879270' WHERE "users"."id" = 1[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 285ms
+
+
+Started GET "/users" for 127.0.0.1 at 2011-12-06 12:46:32 -0500
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+Rendered users/index.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/convoyd_files.css?body=1" for 127.0.0.1 at 2011-12-06 12:46:34 -0500
+Served asset /convoyd_files.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-06 12:46:34 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-06 12:46:34 -0500
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-06 12:46:34 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-06 12:46:34 -0500
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:34 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:34 -0500
+Served asset /convoyd_files.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:34 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:34 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:34 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:34 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2011-12-06 12:46:35 -0500
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mConvoydFile Load (0.3ms)[0m  SELECT "convoyd_files".* FROM "convoyd_files" WHERE "convoyd_files"."user_id" = 1
+Rendered users/show.html.erb within layouts/application (238.5ms)
+Completed 200 OK in 264ms (Views: 259.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-06 12:46:36 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.css?body=1" for 127.0.0.1 at 2011-12-06 12:46:36 -0500
+Served asset /convoyd_files.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-06 12:46:36 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-06 12:46:36 -0500
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-06 12:46:36 -0500
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:36 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:37 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:37 -0500
+Served asset /convoyd_files.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:37 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:37 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:37 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2011-12-06 12:46:47 -0500
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+Rendered users/_form.html.erb (15.5ms)
+Rendered users/edit.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 30ms (Views: 27.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-06 12:46:47 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.css?body=1" for 127.0.0.1 at 2011-12-06 12:46:47 -0500
+Served asset /convoyd_files.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-06 12:46:47 -0500
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-06 12:46:47 -0500
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-06 12:46:47 -0500
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:48 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:48 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:48 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:48 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:48 -0500
+Served asset /convoyd_files.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-06 12:46:48 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-12-07 16:54:40 -0500
+  Processing by UsersController#index as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-07 16:54:40 -0500
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 242ms (Views: 242.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-07 16:54:41 -0500
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/convoyd_files.css?body=1" for 127.0.0.1 at 2011-12-07 16:54:41 -0500
+Served asset /convoyd_files.css - 200 OK (9ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-07 16:54:41 -0500
+Served asset /scaffolds.css - 200 OK (3ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-07 16:54:41 -0500
+Served asset /sessions.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-07 16:54:41 -0500
+Served asset /jquery_ujs.js - 200 OK (5ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-07 16:54:41 -0500
+Served asset /users.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-07 16:54:41 -0500
+Served asset /jquery.js - 200 OK (44ms)
+
+
+Started GET "/assets/convoyd_files.js?body=1" for 127.0.0.1 at 2011-12-07 16:54:41 -0500
+Served asset /convoyd_files.js - 200 OK (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-07 16:54:41 -0500
+Served asset /sessions.js - 200 OK (2ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-07 16:54:41 -0500
+Served asset /users.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-07 16:54:41 -0500
+Served asset /application.js - 200 OK (0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-12-07 16:55:00 -0500
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Uys/yAI4MS1/o3TahOoWq71DZ55680KRiQwC6ZmnbBE=", "email"=>"offmango@me.com", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (12.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE (email = 'offmango@me.com') LIMIT 1[0m
+Completed 500 Internal Server Error in 280ms
+
+ActionView::MissingTemplate (Missing template sessions/create, application/create with {:handlers=>[:erb, :builder, :coffee], :formats=>[:html], :locale=>[:en, :en]}. Searched in:
+  * "/Users/ek23/Dropbox/Programming/Ruby on Rails/Projects/convoyd/app/views"
+):
+  
+
+Rendered /Users/ek23/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-12-07 16:56:03 -0500
+  Processing by UsersController#index as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-07 16:56:03 -0500
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 12ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-12-07 16:56:11 -0500
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Uys/yAI4MS1/o3TahOoWq71DZ55680KRiQwC6ZmnbBE=", "email"=>"offmango@me.com", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE (email = 'offmango@me.com') LIMIT 1
+Rendered sessions/create.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 230ms (Views: 10.4ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-12-07 16:57:08 -0500
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Uys/yAI4MS1/o3TahOoWq71DZ55680KRiQwC6ZmnbBE=", "email"=>"offmango@me.com", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE (email = 'offmango@me.com') LIMIT 1[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 178ms
+
+
+Started GET "/users" for 127.0.0.1 at 2011-12-07 16:57:08 -0500
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+Rendered users/index.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 100ms (Views: 35.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2011-12-07 16:57:12 -0500
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Rendered users/_form.html.erb (16.5ms)
+Rendered users/edit.html.erb within layouts/application (79.5ms)
+Completed 200 OK in 115ms (Views: 112.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2011-12-07 16:57:19 -0500
+  Processing by SessionsController#destroy as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Redirected to http://localhost:3000/login
+Completed 302 Found in 20ms
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-07 16:57:19 -0500
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 11ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-12-07 16:57:23 -0500
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kHAqM6pd6U/xZ+wV+BUa5xB5P7xse7xN8xY1nQXLnK4=", "email"=>"dfdfd", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE (email = 'dfdfd') LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 16ms
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-07 16:57:23 -0500
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-12-07 16:58:41 -0500
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kHAqM6pd6U/xZ+wV+BUa5xB5P7xse7xN8xY1nQXLnK4=", "email"=>"dfdfd", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE (email = 'dfdfd') LIMIT 1
+Redirected to http://localhost:3000/login
+Completed 302 Found in 62ms
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-07 16:58:41 -0500
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 11ms (Views: 10.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-12-07 16:58:49 -0500
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kHAqM6pd6U/xZ+wV+BUa5xB5P7xse7xN8xY1nQXLnK4=", "email"=>"offmango@me.com", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE (email = 'offmango@me.com') LIMIT 1[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 221ms
+
+
+Started GET "/users/1" for 127.0.0.1 at 2011-12-07 16:58:49 -0500
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mConvoydFile Load (17.8ms)[0m  SELECT "convoyd_files".* FROM "convoyd_files" WHERE "convoyd_files"."user_id" = 1
+Rendered users/show.html.erb within layouts/application (188.2ms)
+Completed 200 OK in 217ms (Views: 195.9ms | ActiveRecord: 19.0ms)
+
+
+Started GET "/users/1/convoyd_files/new" for 127.0.0.1 at 2011-12-07 16:58:56 -0500
+  Processing by ConvoydFilesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Rendered convoyd_files/_form.html.erb (49.2ms)
+Rendered convoyd_files/new.html.erb within layouts/application (55.6ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Completed 200 OK in 138ms (Views: 79.0ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users/1/convoyd_files" for 127.0.0.1 at 2011-12-07 16:59:11 -0500
+  Processing by ConvoydFilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4Q29Kr7iWTeEyh6662Ic+uwNyv/7+fqcaIMAFC+jtQ=", "convoyd_file"=>{"user_id"=>"1", "upload"=>#<ActionDispatch::Http::UploadedFile:0x007faa17e0bc58 @original_filename="wacky-fun-center.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"convoyd_file[upload]\"; filename=\"wacky-fun-center.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/var/folders/2r/8p5ff4z15_x71z8cgrv3jhmw0000gq/T/RackMultipart20111207-3156-8ce3l>>}, "commit"=>"Upload!", "user_id"=>"1"}
+Completed 500 Internal Server Error in 16ms
+
+LoadError (no such file to load -- aws/s3 (You may need to install the aws-s3 gem)):
+  app/controllers/convoyd_files_controller.rb:44:in `new'
+  app/controllers/convoyd_files_controller.rb:44:in `create'
+
+Rendered /Users/ek23/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/ek23/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+Rendered /Users/ek23/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.9ms)
+
+
+Started GET "/users/1/convoyd_files/new" for 127.0.0.1 at 2011-12-07 17:02:47 -0500
+  Processing by ConvoydFilesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Rendered convoyd_files/_form.html.erb (76.2ms)
+Rendered convoyd_files/new.html.erb within layouts/application (106.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Completed 200 OK in 263ms (Views: 207.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/users/1/convoyd_files" for 127.0.0.1 at 2011-12-07 17:02:59 -0500
+  Processing by ConvoydFilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4Q29Kr7iWTeEyh6662Ic+uwNyv/7+fqcaIMAFC+jtQ=", "convoyd_file"=>{"user_id"=>"1", "upload"=>#<ActionDispatch::Http::UploadedFile:0x007fc6c7e78d68 @original_filename="gumpv.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"convoyd_file[upload]\"; filename=\"gumpv.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/var/folders/2r/8p5ff4z15_x71z8cgrv3jhmw0000gq/T/RackMultipart20111207-3240-1lra6lt>>}, "commit"=>"Upload!", "user_id"=>"1"}
+Completed 500 Internal Server Error in 320ms
+
+AWS::S3::MissingAccessKey (You did not provide both required access keys. Please provide the access_key_id and the secret_access_key.):
+  app/controllers/convoyd_files_controller.rb:44:in `new'
+  app/controllers/convoyd_files_controller.rb:44:in `create'
+
+Rendered /Users/ek23/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /Users/ek23/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /Users/ek23/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.0ms)
+
+
+Started GET "/users/1/convoyd_files" for 127.0.0.1 at 2011-12-08 11:05:54 -0500
+  Processing by ConvoydFilesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mConvoydFile Load (7.7ms)[0m  [1mSELECT "convoyd_files".* FROM "convoyd_files" [0m
+Rendered convoyd_files/index.html.erb within layouts/application (134.5ms)
+Completed 500 Internal Server Error in 297ms
+
+ActionView::Template::Error (undefined local variable or method `new_convoyd_file_path' for #<#<Class:0x007ff01acc8eb0>:0x007ff01acb21d8>):
+    30: 
+    31: <br />
+    32: 
+    33: <%= link_to 'New Convoyd file', new_convoyd_file_path %>
+  app/views/convoyd_files/index.html.erb:33:in `_app_views_convoyd_files_index_html_erb___1976434499274296514_70334638224560'
+  app/controllers/convoyd_files_controller.rb:7:in `index'
+
+Rendered /Users/ek23/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/ek23/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /Users/ek23/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.8ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2011-12-08 11:06:12 -0500
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+Rendered users/index.html.erb within layouts/application (45.2ms)
+Completed 200 OK in 353ms (Views: 291.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-08 11:06:13 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.css?body=1" for 127.0.0.1 at 2011-12-08 11:06:13 -0500
+Served asset /convoyd_files.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-08 11:06:13 -0500
+Served asset /scaffolds.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-08 11:06:13 -0500
+Served asset /users.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-08 11:06:13 -0500
+Served asset /sessions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-08 11:06:13 -0500
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/convoyd_files.js?body=1" for 127.0.0.1 at 2011-12-08 11:06:13 -0500
+Served asset /convoyd_files.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-08 11:06:13 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-08 11:06:13 -0500
+Served asset /sessions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-08 11:06:13 -0500
+Served asset /users.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-08 11:06:13 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2011-12-08 11:06:16 -0500
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mConvoydFile Load (10.0ms)[0m  SELECT "convoyd_files".* FROM "convoyd_files" WHERE "convoyd_files"."user_id" = 1
+Rendered users/show.html.erb within layouts/application (188.3ms)
+Completed 200 OK in 211ms (Views: 197.4ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-08 11:06:16 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.css?body=1" for 127.0.0.1 at 2011-12-08 11:06:16 -0500
+Served asset /convoyd_files.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-08 11:06:16 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-08 11:06:16 -0500
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-08 11:06:16 -0500
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-08 11:06:17 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-08 11:06:17 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.js?body=1" for 127.0.0.1 at 2011-12-08 11:06:17 -0500
+Served asset /convoyd_files.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-08 11:06:17 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-08 11:06:17 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-08 11:06:17 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/users/1/convoyd_files/new" for 127.0.0.1 at 2011-12-08 11:06:18 -0500
+  Processing by ConvoydFilesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Rendered convoyd_files/_form.html.erb (83.7ms)
+Rendered convoyd_files/new.html.erb within layouts/application (123.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Completed 200 OK in 166ms (Views: 150.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-08 11:06:19 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.css?body=1" for 127.0.0.1 at 2011-12-08 11:06:19 -0500
+Served asset /convoyd_files.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-08 11:06:19 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-08 11:06:19 -0500
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-08 11:06:19 -0500
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-08 11:06:19 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-08 11:06:19 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.js?body=1" for 127.0.0.1 at 2011-12-08 11:06:19 -0500
+Served asset /convoyd_files.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-08 11:06:19 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-08 11:06:19 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-08 11:06:19 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/1/convoyd_files" for 127.0.0.1 at 2011-12-08 11:06:32 -0500
+  Processing by ConvoydFilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4Q29Kr7iWTeEyh6662Ic+uwNyv/7+fqcaIMAFC+jtQ=", "convoyd_file"=>{"user_id"=>"1", "upload"=>#<ActionDispatch::Http::UploadedFile:0x007ff01aba1758 @original_filename="gumpv.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"convoyd_file[upload]\"; filename=\"gumpv.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/var/folders/2r/8p5ff4z15_x71z8cgrv3jhmw0000gq/T/RackMultipart20111208-6504-1jvm4bt>>}, "commit"=>"Upload!", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Binary data inserted for `string` type on column `upload_content_type`
+  [1m[35mSQL (96.0ms)[0m  INSERT INTO "convoyd_files" ("convoyd_key", "created_at", "crypted_password", "status", "updated_at", "upload", "upload_content_type", "upload_file_name", "upload_file_size", "upload_updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["convoyd_key", nil], ["created_at", Thu, 08 Dec 2011 11:06:33 EST -05:00], ["crypted_password", nil], ["status", nil], ["updated_at", Thu, 08 Dec 2011 11:06:33 EST -05:00], ["upload", nil], ["upload_content_type", "image/jpeg"], ["upload_file_name", "gumpv.jpg"], ["upload_file_size", 75851], ["upload_updated_at", Thu, 08 Dec 2011 11:06:33 EST -05:00], ["user_id", 1]]
+[paperclip] Saving attachments.
+[paperclip] saving /uploads/2/original/gumpv.jpg
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 1177ms
+
+
+Started GET "/users/1" for 127.0.0.1 at 2011-12-08 11:06:34 -0500
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mConvoydFile Load (0.4ms)[0m  [1mSELECT "convoyd_files".* FROM "convoyd_files" WHERE "convoyd_files"."user_id" = 1[0m
+Rendered users/show.html.erb within layouts/application (98.7ms)
+Completed 200 OK in 182ms (Views: 178.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-08 11:06:34 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-08 11:06:34 -0500
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-08 11:06:34 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.css?body=1" for 127.0.0.1 at 2011-12-08 11:06:34 -0500
+Served asset /convoyd_files.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-08 11:06:34 -0500
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-08 11:06:35 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-08 11:06:35 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/convoyd_files.js?body=1" for 127.0.0.1 at 2011-12-08 11:06:35 -0500
+Served asset /convoyd_files.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-08 11:06:35 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-08 11:06:35 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-08 11:06:35 -0500
+Served asset /application.js - 304 Not Modified (0ms)

@@ -31,6 +31,18 @@
 	  <%= f.label :password_confirmation %>
 	  <%= f.password_field :password_confirmation %>
 	</div>
+	<div class="field">
+	  <%= f.label :quota %><br />
+	  <%= f.text_field :quota %>
+	</div>
+	<div class = "field">
+		<%= f.label :role %><br />
+		<%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
+	</div>
+	<div class = "field">
+		<%= f.label :status %><br />
+		<%= f.collection_select :status, User::STATUSES, :to_s, :humanize %>
+	</div>	
 
 	<div class="actions">
 	  <%= f.submit %>

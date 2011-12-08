@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111205181719) do
+ActiveRecord::Schema.define(:version => 20111206170638) do
 
   create_table "convoyd_files", :force => true do |t|
     t.integer  "user_id"
@@ -22,6 +22,9 @@ ActiveRecord::Schema.define(:version => 20111205181719) do
     t.string   "upload"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "crypted_password"
+    t.string   "convoyd_key"
+    t.string   "status"
   end
 
   create_table "users", :force => true do |t|
@@ -32,6 +35,9 @@ ActiveRecord::Schema.define(:version => 20111205181719) do
     t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "status"
+    t.string   "role"
+    t.float    "quota"
   end
 
 end
