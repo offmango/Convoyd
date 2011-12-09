@@ -5,7 +5,7 @@ class ConvoydFile < ActiveRecord::Base
   belongs_to :user
   
   attr_accessible :upload, :user_id, :password, :password_confirmation, :notification
-  attr_accessor :notification
+  attr_accessor :notification, :password, :password_confirmation
   
   has_attached_file :upload, 
     :storage => :s3,
