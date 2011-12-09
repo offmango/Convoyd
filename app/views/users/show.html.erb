@@ -6,9 +6,10 @@
 	<% for convoyd_file in @user.convoyd_files %>
 		<ul>
 			<li>
-				<b><%= convoyd_file.upload_file_name %></b>, uploaded <%= convoyd_file.created_at %>
-				| <%= link_to 'Link', convoyd_file.upload.url(:original), :target => "_blank"  %>
-				| <%= link_to 'Delete', convoyd_file, :confirm => "Are you sure you want to delete the file #{convoyd_file.upload_file_name}?", :method => :delete %>
+				<%= link_to "#{convoyd_file.upload_file_name}", download_convoyd_file_path(convoyd_file) , :target => "_blank"  %>,
+				 uploaded <%= convoyd_file.created_at %>
+				<%= button_to "Delete", { :controller => 'convoyd_files', :action => 'destroy', :id => convoyd_file.id, :user_id => @user.id },
+					:confirm => "Are you sure you want to delete the file #{convoyd_file.upload_file_name}?", :method => :delete %>
 			</li>	
 		</ul>		
 	<% end %>

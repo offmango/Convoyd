@@ -1,6 +1,6 @@
 class ConvoydFilesController < ApplicationController
-  # GET /convoyd_files
-  # GET /convoyd_files.json
+    
+  
   def index
     @convoyd_files = ConvoydFile.all
 
@@ -14,10 +14,8 @@ class ConvoydFilesController < ApplicationController
   # GET /convoyd_files/1.json
   def show
     @convoyd_file = ConvoydFile.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @convoyd_file }
+    if @convoyd_file.requires_password? && !@convoyd_file.authenticated?
+      redirect_to authenticate_for_file_path
     end
   end
 
@@ -75,4 +73,24 @@ class ConvoydFilesController < ApplicationController
 
     redirect_to user_path(@user)
   end
+  
+  
+  def download
+    @convoyd_file = ConvoydFile.find(params[:id])
+    redirect_to @convoyd_file.upload.expiring_url(10)
+  end
+  
+  
+  def authenticate
+    @convoyd_file = ConvoydFile.find(params[:id])
+  end
+  
+  def check_authentication
+    @convoyd_file = ConvoydFile.find(params[:id])
+    if params[:password]
+    end
+    
+  end
+  
+  
 end

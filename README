@@ -2,6 +2,15 @@ TO DO
 
 Generate User model
 
-Set up Paperclip for attachments
-
 Set up Sorcery
+
+
+Cancan rules in ability.rb
+	- users can only see their own files
+
+
+random key for each file
+
+optional password protection for each file
+
+Set up cron job to remove files after 48 hours.

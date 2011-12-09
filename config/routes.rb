@@ -5,8 +5,11 @@ Convoyd::Application.routes.draw do
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
   
+  match 'convoyd_files/:id/download' => "convoyd_files#download", :as => "download_convoyd_file"
+  
+  
   resources :users, :shallow => true do
-    resources :convoyd_files
+    resources :convoyd_files 
   end
   
   resources :sessions

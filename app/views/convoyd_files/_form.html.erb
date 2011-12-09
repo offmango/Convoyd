@@ -1,22 +1,33 @@
 <%= form_for([@user, @convoyd_file], :html => {:multipart => true}) do |f| %>
-  <% if @convoyd_file.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@convoyd_file.errors.count, "error") %> prohibited this file from being uploaded:</h2>
+ 	<% if @convoyd_file.errors.any? %>
+   		<div id="error_explanation">
+     		<h2><%= pluralize(@convoyd_file.errors.count, "error") %> prohibited this file from being uploaded:</h2>
+     		<ul>
+     			<% @convoyd_file.errors.full_messages.each do |msg| %>
+       				<li><%= msg %></li>
+     			<% end %>
+     		</ul>
+   		</div>
+ 	<% end %>
 
-      <ul>
-      <% @convoyd_file.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <%= f.hidden_field :user_id, :value => @user.id %>
-	<p>Please select your file to be uploaded, then click "Upload!"</p>
-  <div class="field">
-    <%= f.file_field :upload %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Upload!" %>
-  </div>
+ 	<%= f.hidden_field :user_id, :value => @user.id %>
+	<p>Select your file</p>
+ 	<div class="field">
+   		<%= f.file_field :upload %>
+ 	</div>
+	<p>Tell us who we should email</p>
+	<div class="field">
+   		<%= f.text_field :notification %>
+ 	</div>
+	<p>Give it a password (if you want)</p>
+	<div class="field">
+   		<%= f.password_field :password %>
+ 	</div>
+	<p>Confirm the password you just typed (if you entered one)</p>
+	<div class="field">
+	  	<%= f.password_field :password_confirmation %>
+	 </div>
+ 	<div class="actions">
+   		<%= f.submit "Upload!" %>
+ 	</div>
 <% end %>
