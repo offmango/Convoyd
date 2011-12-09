@@ -13,4 +13,6 @@ random key for each file
 
 optional password protection for each file
 
+lock down convoyd_files/index and index of files for user
+
 Set up cron job to remove files after 48 hours.

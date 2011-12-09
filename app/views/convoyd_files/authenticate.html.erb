@@ -1,0 +1,9 @@
+<h1>Enter the Password!</h1>
+
+<%= form_tag({:controller => "convoyd_files", :action => "check_authentication"}) do %>
+  <div class="field">
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+  </div>
+  <div class="actions"><%= submit_tag "Authenticate!" %></div>
+<% end %>

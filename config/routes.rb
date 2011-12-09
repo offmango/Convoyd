@@ -5,6 +5,9 @@ Convoyd::Application.routes.draw do
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
   
+  get "convoyd_files/:id/authenticate" => "convoyd_files#authenticate", :as => "authenticate_for_file"
+  match "convoyd_files/:id/check_authentication" => "convoyd_files#check_authentication", :as => "check_authentication"
+  
   match 'convoyd_files/:id/download' => "convoyd_files#download", :as => "download_convoyd_file"
   
   

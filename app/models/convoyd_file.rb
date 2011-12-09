@@ -1,3 +1,5 @@
+require 'bcrypt'
+
 class ConvoydFile < ActiveRecord::Base
   
   authenticates_with_sorcery!
@@ -5,7 +7,12 @@ class ConvoydFile < ActiveRecord::Base
   belongs_to :user
   
   attr_accessible :upload, :user_id, :password, :password_confirmation, :notification
-  attr_accessor :notification, :password, :password_confirmation
+  attr_accessor :notification, :password
+  
+  before_save :encrypt_password
+  
+  validates_confirmation_of :password
+  
   
   has_attached_file :upload, 
     :storage => :s3,
@@ -21,6 +28,18 @@ class ConvoydFile < ActiveRecord::Base
   validates_attachment_size :upload, :less_than => 500.megabytes
   
   STATUSES = %w[locked unlocked]
+  
+  
+  def encrypt_password
+    if password.present?
+      self.crypted_password = BCrypt::Password.create(password)
+    end
+  end
+  
+  
+  def password_authentic?(password)
+    BCrypt::Password.new(self.crypted_password) == password
+  end
     
   
   def requires_password?
@@ -28,8 +47,8 @@ class ConvoydFile < ActiveRecord::Base
   end
   
   
-  def authenticated?
-    session[:file_id] && session[:file_id] == self.id
+  def authenticated?(file_id)
+    file_id == self.id
   end
   
   

@@ -14,8 +14,8 @@ class ConvoydFilesController < ApplicationController
   # GET /convoyd_files/1.json
   def show
     @convoyd_file = ConvoydFile.find(params[:id])
-    if @convoyd_file.requires_password? && !@convoyd_file.authenticated?
-      redirect_to authenticate_for_file_path
+    if @convoyd_file.requires_password? && !@convoyd_file.authenticated?(session[:file_id])
+      redirect_to authenticate_for_file_path(@convoyd_file)
     end
   end
 
@@ -87,9 +87,12 @@ class ConvoydFilesController < ApplicationController
   
   def check_authentication
     @convoyd_file = ConvoydFile.find(params[:id])
-    if params[:password]
+    if @convoyd_file.password_authentic?(params[:password])
+       session[:file_id] = @convoyd_file.id
+       redirect_to convoyd_file_path(@convoyd_file)
+     else
+       redirect_to authenticate_for_file_path(@convoyd_file), :notice => 'Authentication failed!'
     end
-    
   end
   
   
