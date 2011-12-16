@@ -58,3 +58,5 @@ Convoyd::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 end
+
+ENV['URL_PREFIX'] = "http://convoyd.com"

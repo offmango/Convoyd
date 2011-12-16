@@ -6,12 +6,12 @@ class ConvoydFile < ActiveRecord::Base
   
   belongs_to :user
   
-  attr_accessible :upload, :user_id, :password, :password_confirmation, :notification
-  attr_accessor :notification, :password
+  attr_accessible :upload, :user_id, :set_pass, :notification
+  attr_accessor :notification, :set_pass
   
-  before_save :encrypt_password
+  # before_save :encrypt_password
   
-  validates_confirmation_of :password
+  # validates_confirmation_of :password
   
   
   has_attached_file :upload, 
@@ -38,7 +38,8 @@ class ConvoydFile < ActiveRecord::Base
   
   
   def password_authentic?(password)
-    BCrypt::Password.new(self.crypted_password) == password
+    self.crypted_password == password
+    # BCrypt::Password.new(self.crypted_password) == password
   end
     
   
@@ -51,5 +52,17 @@ class ConvoydFile < ActiveRecord::Base
     file_id == self.id
   end
   
+  
+  def set_random_password
+    self.crypted_password = ConvoydFile.random_password(10)
+    self.save
+  end
+  
+    
+  protected
+
+  def self.random_password(length)
+    rand(36**length).to_s(36)
+  end
   
 end

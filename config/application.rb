@@ -44,5 +44,19 @@ module Convoyd
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    # action_mailer settings
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      :address => "mail.yale.edu",
+      :port => 587,
+      :domain => "yale.edu",
+      # with these disabled, the server must be connected to the yale network for email to work
+      #:authentication => :login,
+      #:user_name => "username",
+      #:password => "password",
+    }
+    config.action_mailer.default :charset => "utf-8"
+    config.action_mailer.raise_delivery_errors = true
   end
 end

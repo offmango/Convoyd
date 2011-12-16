@@ -1,34 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>User:</b>
-  <%= @convoyd_file.user_id %>
+  <%= @convoyd_file.user.first_name %>'s file
 </p>
 
 <p>
-  <b>Upload file size:</b>
-  <%= @convoyd_file.upload_file_size %>
+	<b>Download it here</b>: <%= link_to "#{@convoyd_file.upload_file_name}", download_convoyd_file_path(@convoyd_file) , :target => "_blank"  %>
 </p>
-
-<p>
-  <b>Upload content type:</b>
-  <%= @convoyd_file.upload_content_type %>
-</p>
-
-<p>
-  <b>Upload file name:</b>
-  <%= @convoyd_file.upload_file_name %>
-</p>
-
-<p>
-  <b>Upload updated at:</b>
-  <%= @convoyd_file.upload_updated_at %>
-</p>
-
-<p>
-  <b>Upload:</b>
-  <%= @convoyd_file.upload %>
-</p>
-
-
-<%= link_to 'Edit', edit_convoyd_file_path(@convoyd_file) %> |

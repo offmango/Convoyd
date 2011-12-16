@@ -36,13 +36,15 @@ class ConvoydFilesController < ApplicationController
     @convoyd_file = ConvoydFile.find(params[:id])
   end
 
-  # POST /convoyd_files
-  # POST /convoyd_files.json
+ 
   def create
     @convoyd_file = ConvoydFile.new(params[:convoyd_file])
     @user = User.find(params[:user_id])
+    emails = params[:convoyd_file][:notification]
+    @convoyd_file.set_random_password if params[:convoyd_file][:set_pass] == "1"
 
     if @convoyd_file.save
+      Notifier.upload_notification(@convoyd_file, emails).deliver if emails.present?
       redirect_to user_path(@user), :notice => 'Convoyd file was successfully created.'
     else
       render action: "new" 

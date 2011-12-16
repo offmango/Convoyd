@@ -27,4 +27,7 @@ Convoyd::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
 end
+
+ENV['URL_PREFIX'] = "localhost:3000"

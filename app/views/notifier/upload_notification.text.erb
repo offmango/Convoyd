@@ -1,0 +1,14 @@
+Hey there,
+
+I just uploaded a file for you on Convoyd.  You can download it by going here and clicking on the Download link:
+
+<%= ENV['URL_PREFIX'] + convoyd_file_path(@convoyd_file) %>
+
+<% if @convoyd_file.crypted_password.present? %>
+You'll need this password to access that file:
+
+<%= @convoyd_file.crypted_password %>
+<% end %>
+
+Enjoy!
+

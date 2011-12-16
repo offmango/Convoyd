@@ -15,18 +15,14 @@
  	<div class="field">
    		<%= f.file_field :upload %>
  	</div>
-	<p>Tell us who we should email</p>
+	<p>Tell us who we should email.  Separate multiple emails with a comma.</p>
 	<div class="field">
    		<%= f.text_field :notification %>
  	</div>
-	<p>Give it a password (if you want)</p>
+	<p>Give file a random password?</p>
 	<div class="field">
-   		<%= f.password_field :password %>
+   		<%= f.check_box :set_pass %>
  	</div>
-	<p>Confirm the password you just typed (if you entered one)</p>
-	<div class="field">
-	  	<%= f.password_field :password_confirmation %>
-	 </div>
  	<div class="actions">
    		<%= f.submit "Upload!" %>
  	</div>
