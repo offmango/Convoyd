@@ -9,9 +9,6 @@ Cancan rules in ability.rb
 	- users can only see their own files
 
 
-random key for each file
-
-optional password protection for each file
 
 lock down convoyd_files/index and index of files for user
 
@@ -23,4 +20,5 @@ Create public view for convoyd_files with link to download.
 
 CHANGE convoyd_file.crypted_password to convoyd_file.password
 
-Add URL to environment files (localhost for development, convoyd.com for production)
+
+**Change mailer server settings from yale's
